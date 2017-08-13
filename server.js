@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne= {
+var articles= {
+articleOne: {
     title: 'Article One | Vignesh Hegde',
     heading:'My Profile',
     date:'August 6,2017',
@@ -15,6 +16,29 @@ var articleOne= {
             <div>
                 <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
                </p>`
+},
+articleTwo: {
+    title: 'Article Two | Vignesh Hegde',
+    heading:'My Profile',
+    date:'August 7,2017',
+    content:` <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around           me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment             around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and         environment around me. 
+               </p>
+            </div>
+            <div>
+                <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
+               </p>`
+},
+articleThree: {
+    title: 'Article Three | Vignesh Hegde',
+    heading:'My Profile',
+    date:'August 8,2017',
+    content:` <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around           me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment             around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and         environment around me. 
+               </p>
+            </div>
+            <div>
+                <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
+               </p>`
+}
 };
 
 function createTemplate(data){
@@ -50,8 +74,10 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function(req, res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req, res){
+    //articleName==articleOne
+    //articles[articleName]== content {} of article one
+    res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
