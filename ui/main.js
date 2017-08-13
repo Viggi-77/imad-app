@@ -16,6 +16,6 @@ button.onclick= function(){
         //Not Done yet
     };
     //Make the request
-    request.open('GET','http://hegdevignesh711.imad.hasura-app.io/counter',true);
+    request.open('GET', 'http://hegdevignesh711.imad.hasura-app.io/counter', true);
     request.send(null);
 };
