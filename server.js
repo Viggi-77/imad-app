@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles= {
-articleOne: {
+'article-one': {
     title: 'Article One | Vignesh Hegde',
     heading:'My Profile',
     date:'August 6,2017',
@@ -17,7 +17,7 @@ articleOne: {
                 <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
                </p>`
 },
-articleTwo: {
+'article-two': {
     title: 'Article Two | Vignesh Hegde',
     heading:'My Profile',
     date:'August 7,2017',
@@ -28,7 +28,7 @@ articleTwo: {
                 <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
                </p>`
 },
-articleThree: {
+'article-three': {
     title: 'Article Three | Vignesh Hegde',
     heading:'My Profile',
     date:'August 8,2017',
