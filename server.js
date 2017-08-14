@@ -71,6 +71,13 @@ function createTemplate(data){
     </html>`;
     return htmlTemplate;
 }
+var names=[];
+app.get('/submit-one/:name', function(req, res){
+   var name=req.params.name; 
+   names.push(name);
+   //JSON:Javascript Object Notation;
+   res.send(JSON.stringfy(names));
+});
 var counter=0;
 app.get('/counter', function (req, res) {
     counter=counter+1;
