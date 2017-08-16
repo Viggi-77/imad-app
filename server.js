@@ -113,7 +113,7 @@ app.get('/', function (req, res) {
 app.get('/articles/:articleName', function(req, res){
     //articleName==articleOne
     //articles[articleName]== content {} of article one
-   pool.query("SELECT * from article WHERE title ='"+ req.params.articleName +"'", function(err, result){
+   pool.query("SELECT * from article WHERE title = $1",[req.params.articleName], function(err, result){
        if(err){
            res.status(500).send(err.toString());
        }
