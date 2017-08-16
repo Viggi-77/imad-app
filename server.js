@@ -77,7 +77,7 @@ app.get('/articles/:articleName', function(req, res){
     //articleName==articleOne
     //articles[articleName]== content {} of article one
     //To avoid user to hack the contents by writing any modification db query
-   pool.query("SELECT * from article WHERE title = $1",[req.params.articleName], function(err, result){
+   pool.query("SELECT * FROM article WHERE title = $1",[req.params.articleName], function(err, result){
        if(err){
            res.status(500).send(err.toString());
        }
@@ -85,7 +85,7 @@ app.get('/articles/:articleName', function(req, res){
            if(result.rows.length===0){
                res.status(404).send('Article is not found');
           } else {
-                var articleData=result.rows[0];
+                var articleData=results.rows[0];
                 res.send(createTemplate(articles[articleData]));
             
                }
