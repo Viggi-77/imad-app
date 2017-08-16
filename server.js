@@ -13,43 +13,6 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-
-var articles= {
-'article-one': {
-    title: 'Article One | Vignesh Hegde',
-    heading:'My Profile',
-    date:'August 6,2017',
-    content:` <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around           me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment             around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and         environment around me. 
-               </p>
-            </div>
-            <div>
-                <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
-               </p>`
-},
-'article-two': {
-    title: 'Article Two | Vignesh Hegde',
-    heading:'My Profile',
-    date:'August 7,2017',
-    content:` <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around           me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment             around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and         environment around me. 
-               </p>
-            </div>
-            <div>
-                <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
-               </p>`
-},
-'article-three': {
-    title: 'Article Three | Vignesh Hegde',
-    heading:'My Profile',
-    date:'August 8,2017',
-    content:` <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around           me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment             around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and         environment around me. 
-               </p>
-            </div>
-            <div>
-                <p> A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me.  A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. A simple profile which is not so highfy but wish to explore and grow and contribute to the betterment of the organisation and environment around me. 
-               </p>`
-}
-};
-
 function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
