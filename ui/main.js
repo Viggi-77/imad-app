@@ -8,14 +8,13 @@ submit.onclick= function(){
         if(request.readyState===XMLHttpRequest.DONE){
             //Take some action
         if (request.status===200){
-             var names = request.responseText;
-             names=JSON.parse(names);
-             var list='';
-            for(var i=0;i<names.length;i++){
-                 list+='<li>' +names[i] +'</li>';
-    }
-    var ul=document.getElementById('namelist');
-    ul.innerHTML=list;
+            console.log('User logged in');
+            alert('Logged in Successfully');
+            }else if(request.status===403){
+                alert('Username or Password is Incorrectly entered');
+            }
+            else if(request.status===500){
+                alert('Something went wrong on the server side');
             }
         }
         //Not Done yet
@@ -23,7 +22,10 @@ submit.onclick= function(){
     //Make the request
     var username=document.getElementById('username').value;
     var password=document.getElementById('password').value;
-    request.open('POST', 'http://hegdevignesh711.imad.hasura-app.io/submit-name?name=' + name, true);
+    console.log(username);
+    console.log(password);
+    request.open('POST', 'http://hegdevignesh711.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username:username,password:password}));
     
     //Capture a list of the names and render it as a list
